@@ -197,7 +197,7 @@ class CarBrowserController(context: Context) {
         webViewContext = wrapper
         webView = created
         webViewDensityDpi = context.resources.displayMetrics.densityDpi
-        currentUrl = BrowserPreferences.resolveInitialUrl(appContext)
+        currentUrl = homeUrl()
         created.loadUrl(currentUrl)
         return created
     }
@@ -210,7 +210,10 @@ class CarBrowserController(context: Context) {
         webView?.loadUrl(url)
     }
 
-    fun goHome() = navigate(BrowserPreferences.getHomePageUrl(appContext) ?: BrowserPreferences.defaultUrl())
+    fun goHome() = navigate(homeUrl())
+
+    /** The car screen always opens on the home page, which is YouTube unless one is set in settings. */
+    private fun homeUrl(): String = BrowserPreferences.getHomePageUrl(appContext) ?: DEFAULT_HOME_URL
 
     fun goBack() {
         webView?.takeIf { it.canGoBack() }?.goBack()
@@ -339,6 +342,7 @@ class CarBrowserController(context: Context) {
     private companion object {
         const val TAG = "CarBrowser"
         const val DISPLAY_NAME = "AABrowserCar"
+        const val DEFAULT_HOME_URL = "https://m.youtube.com/"
         const val CLICK_DURATION_MS = 40L
         const val DRAG_IDLE_TIMEOUT_MS = 200L
     }

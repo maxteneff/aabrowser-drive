@@ -18,8 +18,8 @@ android {
         applicationId = "com.maxteneff.aabrowser.drive"
         minSdk = 35
         targetSdk = 37
-        versionCode = 9
-        versionName = "3.0-drive1"
+        versionCode = 10
+        versionName = "3.0-drive2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
