@@ -1,3 +1,46 @@
+# AA Browser Drive
+
+Форк [kododake/AABrowser](https://github.com/kododake/AABrowser) (GPLv3), который открывается в Android Auto **в том числе во время движения**.
+
+> [!CAUTION]
+> Экран предназначен для пассажиров. Водителю смотреть на него в движении нельзя.
+
+## Чем отличается от оригинала
+
+Оригинал проецирует на экран машины обычную Activity как «parked app», и Android Auto закрывает её, как только машина трогается. Здесь браузер зарегистрирован как приложение Car App Library категории «навигация» (`car/BrowserCarAppService`): такие приложения получают поверхность для рисования, которая остаётся доступной на ходу. На эту поверхность через виртуальный дисплей выводится тот же WebView.
+
+Из-за этого управление на экране машины своё:
+
+- Android Auto передаёт только тап, прокрутку, бросок и щипок, поэтому долгого нажатия и перетаскивания нет.
+- Системной клавиатуры на экране машины нет, вместо неё встроенная (EN / РУ / цифры и символы). Она появляется сама при тапе в поле ввода или по кнопке `ABC`.
+- Внизу панель: назад, вперёд, обновить, домой, адресная строка (тап для ввода адреса или поиска), закладки.
+- Кнопка Android Auto в углу экрана прячет и возвращает панель, а также выходит из полноэкранного видео.
+- Закладки, cookies и настройки общие с интерфейсом на телефоне.
+
+Режим «parked app» из форка убран, чтобы в лаунчере машины не было двух значков. Пакет другой (`com.maxteneff.aabrowser.drive`), так что оригинал можно держать рядом.
+
+## Установка
+
+Нужен телефон на Android 15 или новее.
+
+1. Установить APK из [Releases](../../releases/latest).
+2. В настройках Android Auto на телефоне 10 раз нажать на «Версия», затем в меню ⋮ → «Для разработчиков» включить «Неизвестные источники».
+3. Подключиться к машине. Если значка нет, проверить «Настроить панель запуска» в настройках Android Auto.
+4. Если значок всё равно не появился: часть версий Android Auto показывает только приложения, установленные из Google Play. Тогда переустановить так:
+   `adb install -r -i com.android.vending AABrowserDrive-3.0-drive1.apk`
+
+## Проверка без машины
+
+`adb shell am start -n com.maxteneff.aabrowser.drive/com.kododake.aabrowser.car.CarPreviewActivity` открывает на телефоне тот же экран, что и в машине, с тем же урезанным набором жестов (долгое нажатие заменяет кнопку Android Auto).
+
+## Сборка
+
+`./gradlew :app:assembleRelease`, ключ подписи задаётся в `local.properties` (`RELEASE_STORE_FILE`, `RELEASE_STORE_PASSWORD`, `RELEASE_KEY_ALIAS`, `RELEASE_KEY_PASSWORD`).
+
+---
+
+Ниже README оригинального проекта.
+
 # <img src="https://github.com/user-attachments/assets/fa4252fa-b71e-4c87-9b93-d8ad832434cc" width="48" height="48" valign="bottom" /> AA Browser
 
 <a href="https://trendshift.io/repositories/45344" target="_blank"><img src="https://trendshift.io/api/badge/repositories/45344" alt="kododake%2FAABrowser | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>

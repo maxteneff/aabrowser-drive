@@ -15,11 +15,11 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.kododake.aabrowser"
+        applicationId = "com.maxteneff.aabrowser.drive"
         minSdk = 35
         targetSdk = 37
         versionCode = 9
-        versionName = "3.0"
+        versionName = "3.0-drive1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -75,7 +75,7 @@ android {
     androidComponents {
         onVariants { variant ->
             val vNameStr = android.defaultConfig.versionName ?: "unknown"
-            val appNameStr = "AABrowser"
+            val appNameStr = "AABrowserDrive"
             val isDebug = variant.buildType == "debug"
             val debugSuffixStr = if (isDebug) "_debug" else ""
 
