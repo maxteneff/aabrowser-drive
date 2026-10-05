@@ -1,5 +1,8 @@
 # AA Browser Drive
 
+[<img src="https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/graphics/badge_obtainium.png" alt="Get it on Obtainium" height="54">](https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/maxteneff/aabrowser-drive)
+[<img src="https://img.shields.io/badge/Download_APK-GitHub_Releases-181717?style=for-the-badge&logo=github&logoColor=white" alt="Download APK" height="54">](../../releases/latest)
+
 Форк [kododake/AABrowser](https://github.com/kododake/AABrowser) (GPLv3), который открывается в Android Auto **в том числе во время движения**.
 
 > [!CAUTION]
@@ -33,7 +36,7 @@
 ## Установка и обновление через Obtainium
 
 1. Пока репозиторий приватный, Obtainium нужен токен GitHub: создать на https://github.com/settings/personal-access-tokens fine-grained токен с доступом только к этому репозиторию и правом **Contents: Read-only**, затем вставить его в Obtainium → «Настройки» → «Персональный токен доступа GitHub».
-2. В Obtainium нажать «Добавить приложение» и указать `https://github.com/maxteneff/aabrowser-drive` (или открыть на телефоне ссылку `obtainium://add/https://github.com/maxteneff/aabrowser-drive`).
+2. В Obtainium нажать «Добавить приложение» и указать `https://github.com/maxteneff/aabrowser-drive` (или нажать на телефоне бейдж «Get it on Obtainium» вверху этой страницы).
 
 Тег релиза совпадает с версией приложения (`3.0.3` и т. д.), поэтому Obtainium сам видит новые версии.
 
