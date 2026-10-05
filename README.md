@@ -35,8 +35,7 @@
 
 ## Установка и обновление через Obtainium
 
-1. Пока репозиторий приватный, Obtainium нужен токен GitHub: создать на https://github.com/settings/personal-access-tokens fine-grained токен с доступом только к этому репозиторию и правом **Contents: Read-only**, затем вставить его в Obtainium → «Настройки» → «Персональный токен доступа GitHub».
-2. В Obtainium нажать «Добавить приложение» и указать `https://github.com/maxteneff/aabrowser-drive` (или нажать на телефоне бейдж «Get it on Obtainium» вверху этой страницы).
+На телефоне нажать бейдж «Get it on Obtainium» вверху этой страницы (или в Obtainium выбрать «Добавить приложение» и указать `https://github.com/maxteneff/aabrowser-drive`), затем нажать «+» справа от адреса.
 
 Тег релиза совпадает с версией приложения (`3.0.3` и т. д.), поэтому Obtainium сам видит новые версии.
 
