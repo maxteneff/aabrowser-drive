@@ -24,11 +24,18 @@
 
 Нужен телефон на Android 15 или новее.
 
-1. Установить APK из [Releases](../../releases/latest).
+1. Установить APK из [Releases](../../releases/latest) или через Obtainium (см. ниже).
 2. В настройках Android Auto на телефоне 10 раз нажать на «Версия», затем в меню ⋮ → «Для разработчиков» включить «Неизвестные источники».
 3. Подключиться к машине. Если значка нет, проверить «Настроить панель запуска» в настройках Android Auto.
 4. Если значок всё равно не появился: часть версий Android Auto показывает только приложения, установленные из Google Play. Тогда переустановить так:
-   `adb install -r -i com.android.vending AABrowserDrive-3.0-drive2.apk`
+   `adb install -r -i com.android.vending AABrowserDrive.apk`
+
+## Установка и обновление через Obtainium
+
+1. Пока репозиторий приватный, Obtainium нужен токен GitHub: создать на https://github.com/settings/personal-access-tokens fine-grained токен с доступом только к этому репозиторию и правом **Contents: Read-only**, затем вставить его в Obtainium → «Настройки» → «Персональный токен доступа GitHub».
+2. В Obtainium нажать «Добавить приложение» и указать `https://github.com/maxteneff/aabrowser-drive` (или открыть на телефоне ссылку `obtainium://add/https://github.com/maxteneff/aabrowser-drive`).
+
+Тег релиза совпадает с версией приложения (`3.0.3` и т. д.), поэтому Obtainium сам видит новые версии.
 
 ## Проверка без машины
 
